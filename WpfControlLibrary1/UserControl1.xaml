@@ -19,11 +19,23 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Rectangle Grid.RowSpan="2" Fill="White" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            Fill="White" />
         <TextBlock FontSize="24" Text="Registration" />
+        <TextBlock
+            Grid.Column="1"
+            FontSize="24"
+            Text="Login" />
         <StackPanel
             Grid.Row="1"
             Width="200"
+            HorizontalAlignment="Center"
             Style="{StaticResource RegText}">
 
             <TextBlock Text="Login" />
@@ -36,12 +48,12 @@
             <PasswordBox x:Name="RepeatPasswBox" PasswordChanged="RepeatPasswBox_PasswordChanged" />
 
             <TextBlock Text="Secret question" />
-            <ComboBox x:Name="SectetQBox" SelectionChanged="SectetQBox_SelectionChanged">
+            <ComboBox x:Name="SecretQBox" SelectionChanged="SecretQBox_SelectionChanged">
                 <ComboBoxItem Content="Sample question" />
             </ComboBox>
-            
+
             <TextBlock Text="Secret answer" />
-            <TextBox x:Name="SectetABox" TextChanged="SectetABox_TextChanged" />
+            <TextBox x:Name="SecretABox" TextChanged="SecretABox_TextChanged" />
 
             <TextBlock Text="EMail" />
             <TextBox x:Name="EMailBox" TextChanged="EMailBox_TextChanged" />
@@ -58,7 +70,28 @@
                 Mask="9999 999999"
                 TextChanged="PassportBox_TextChanged" />
 
+            <Button
+                x:Name="ConfirmBtn"
+                Click="ConfirmBtn_Click"
+                Content="Confirm" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            HorizontalAlignment="Center"
+            Style="{StaticResource RegText}">
 
+            <TextBlock Text="Login" />
+            <TextBox x:Name="LoginBox2" TextChanged="LoginBox2_TextChanged" />
+
+            <TextBlock Text="Password" />
+            <PasswordBox x:Name="PasswBox2" PasswordChanged="PasswBox2_PasswordChanged" />
+
+            <Button
+                x:Name="Confirm2Btn"
+                Click="Confirm2Btn_Click"
+                Content="Confirm" />
         </StackPanel>
     </Grid>
 </UserControl>
